@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Braga Motos - Especialistas em Peças e Óleo para Motos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="bg-bgBlack text-white font-sans">
+    <header>
+      <nav class="navbarColor">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div class="relative flex h-16 items-center justify-between">
+            <!-- Seção do Botão Mobile -->
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <!-- Botão do Menu Mobile -->
+              <button
+                type="button"
+                id="mobile-menu-button"
+                class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+              >
+                <span class="sr-only">Abrir menu principal</span>
+                <!-- Ícone "hambúrguer" (visível quando o menu está fechado) -->
+                <svg
+                  class="block h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  />
+                </svg>
+                <!-- Ícone "X" (visível quando o menu está aberto) -->
+                <svg
+                  class="hidden h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Seção do Logo e Links Desktop -->
+            <div
+              class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+            >
+              <div class="flex shrink-0 items-center">
+                <img
+                  src="public/logo-no-bg-dark-removebg-preview.png"
+                  alt="Logo Braga Motos"
+                  class="h-10 w-auto"
+                />
+              </div>
+              <div class="hidden sm:ml-6 sm:block">
+                <div class="flex space-x-4">
+                  <a
+                    href="#home"
+                    aria-current="page"
+                    class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                    >Início</a
+                  >
+                  <a
+                    href="#services"
+                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                    >Serviços</a
+                  >
+                  <a
+                    href="#products"
+                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                    >Produtos</a
+                  >
+                  <a
+                    href="#about"
+                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                    >Sobre</a
+                  >
+                  <a
+                    href="#contact"
+                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                    >Contato</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Seção de Ícones e Perfil -->
+            <div
+              class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+            >
+              <button
+                type="button"
+                class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
+              >
+                <span class="sr-only">Ver notificações</span>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  data-slot="icon"
+                  aria-hidden="true"
+                  class="size-6"
+                >
+                  <path
+                    d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+
+              <!-- Dropdown de Perfil (ainda precisará de JS para funcionar) -->
+              <div class="relative ml-3">
+                <div>
+                  <button
+                    type="button"
+                    class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                    id="user-menu-button"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                  >
+                    <span class="sr-only">Abrir menu do usuário</span>
+                    <img
+                      class="h-8 w-8 rounded-full"
+                      src="https://placehold.co/32x32/1f2937/ffffff?text=U"
+                      alt="Ícone do usuário"
+                    />
+                  </button>
+                </div>
+                <!-- Menu do dropdown, escondido por padrão -->
+                <div
+                  class="hidden absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="user-menu-button"
+                  tabindex="-1"
+                >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-0"
+                    >Seu Perfil</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-1"
+                    >Configurações</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-2"
+                    >Sair</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Menu Mobile (inicia escondido) -->
+        <div class="hidden sm:hidden" id="mobile-menu">
+          <div class="space-y-1 px-2 pb-3 pt-2">
+            <a
+              href="#home"
+              class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+              aria-current="page"
+              >Início</a
+            >
+            <a
+              href="#services"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              >Serviços</a
+            >
+            <a
+              href="#products"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              >Produtos</a
+            >
+            <a
+              href="#about"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              >Sobre</a
+            >
+            <a
+              href="#contact"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              >Contato</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero pt-24 pb-32 md:pt-32 md:pb-48">
+        <div class="container mx-auto px-4 text-center">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6">
+            ESPECIALISTAS EM MOTOS
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-100">
+            Peças originais e acessórios de qualidade para sua moto. Troca de
+            óleo profissional com os melhores produtos do mercado.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="#products"
+              class="bg-primary hover:bg-borderColor text-white font-bold py-3 px-6 rounded-full transition duration-300"
+              >VER PRODUTOS</a
+            >
+            <a
+              href="#contact"
+              class="border border-white text-white hover:bg-textLight hover:text-black font-bold py-3 px-6 rounded-full transition duration-300"
+              >FALE CONOSCO</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="py-16 bg-secondary">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold text-center mb-4">NOSSOS SERVIÇOS</h2>
+          <p class="text-center text-textLight max-w-2xl mx-auto mb-12">
+            Oferecemos os melhores serviços para manter sua moto em perfeito
+            estado
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Service 1 -->
+            <div
+              class="service-card bg-secondary border border-textLight p-6 rounded-lg text-center hover:border-primaryHover transition"
+            >
+              <div class="service-icon text-textWhite text-5xl mb-4">
+                <i class="fas fa-oil-can"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Troca de Óleo</h3>
+              <p class="text-textGray">
+                Utilizamos os melhores óleos lubrificantes do mercado para
+                garantir o máximo desempenho e proteção do seu motor.
+              </p>
+            </div>
+
+            <!-- Service 2 -->
+            <div
+              class="service-card bg-secondary border border-borderColor p-6 rounded-lg text-center hover:border-primaryHover transition"
+            >
+              <div class="service-icon text-textWhite text-5xl mb-4">
+                <i class="fas fa-tools"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Manutenção Preventiva</h3>
+              <p class="text-textGray">
+                Serviços especializados para evitar problemas futuros e manter
+                sua moto sempre em perfeitas condições.
+              </p>
+            </div>
+
+            <!-- Service 3 -->
+            <div
+              class="service-card bg-secondary border border-borderColor p-6 rounded-lg text-center hover:border-primaryHover transition"
+            >
+              <div class="service-icon text-textWhite text-5xl mb-4">
+                <i class="fas fa-warehouse"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Peças Originais</h3>
+              <p class="text-textGray">
+                Temos um amplo estoque de peças originais e de qualidade para
+                diversas marcas e modelos de motos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Products -->
+      <section id="products" class="py-16 bg-gray-200">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold text-center mb-4 text-secondary">
+            DESTAQUES
+          </h2>
+          <p class="text-center text-gray-800 max-w-2xl mx-auto mb-12">
+            Confira nossos produtos mais vendidos
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Product 1 -->
+            <div
+              class="product-card bg-secondary border border-borderColor rounded-lg overflow-hidden transition duration-300 bg-shadow-lg"
+            >
+              <div class="h-80 overflow-hidden">
+                <img
+                  src="public/motul.jpeg"
+                  alt="Óleo para moto"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="font-bold text-lg mb-2">Óleo Sintético 20W50</h3>
+                <p class="text-textLight text-sm mb-4">
+                  Óleo de alta performance para motos esportivas e custom.
+                </p>
+                <a
+                  href="https://lista.mercadolivre.com.br"
+                  target="_blank"
+                  class="bg-primary hover:bg-primaryHover text-white font-bold py-2 px-4 rounded-full text-sm transition duration-300 inline-block"
+                  >COMPRAR AGORA</a
+                >
+              </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div
+              class="product-card bg-secondary border border-borderColor rounded-lg overflow-hidden transition duration-300"
+            >
+              <div class="h-70 overflow-hidden">
+                <img
+                  src="public/pneu.jpeg"
+                  alt="Pneu para moto"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="font-bold text-lg mb-2">Pneu Dianteiro 110/70</h3>
+                <p class="text-textGray text-sm mb-4">
+                  Pneu de alta aderência para diversas condições de pista.
+                </p>
+                <a
+                  href="https://lista.mercadolivre.com.br"
+                  target="_blank"
+                  class="bg-primary hover:bg-primaryHover text-white font-bold py-2 px-4 rounded-full text-sm transition duration-300 inline-block"
+                  >COMPRAR AGORA</a
+                >
+              </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div
+              class="product-card bg-secondary border border-borderColor rounded-lg overflow-hidden transition duration-300"
+            >
+              <div class="h-70 overflow-hidden">
+                <img
+                  src="public/capacete.jpeg"
+                  alt="Capacete para moto"
+                  class="w-50 h-50 object-cover"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="font-bold text-lg mb-2">Capacete Jet Integral</h3>
+                <p class="text-textGray text-sm mb-4">
+                  Capacete com certificação de segurança e design moderno.
+                </p>
+                <a
+                  href="https://lista.mercadolivre.com.br"
+                  target="_blank"
+                  class="bg-primary hover:bg-primaryHover text-white font-bold py-2 px-4 rounded-full text-sm transition duration-300 inline-block"
+                  >COMPRAR AGORA</a
+                >
+              </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div
+              class="product-card bg-secondary border border-borderColor rounded-lg overflow-hidden transition duration-300"
+            >
+              <div class="h-70 overflow-hidden">
+                <img
+                  src="public/retro.jpeg"
+                  alt="Filtro de óleo"
+                  class="w-50 h-50 object-cover"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="font-bold text-lg mb-2">Filtro de Óleo Original</h3>
+                <p class="text-textGray text-sm mb-4">
+                  Filtro de alta qualidade para diversas marcas de motos.
+                </p>
+                <a
+                  href="https://lista.mercadolivre.com.br"
+                  target="_blank"
+                  class="bg-primary hover:bg-primaryHover text-white font-bold py-2 px-4 rounded-full text-sm transition duration-300 inline-block"
+                  >COMPRAR AGORA</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-10">
+            <a
+              href="https://lista.mercadolivre.com.br"
+              target="_blank"
+              class="border border-primary text-primary hover:bg-primary hover:text-whiteSoft font-bold py-3 px-8 rounded-full transition duration-300 inline-block"
+              >VER MAIS PRODUTOS</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Oil Change Special -->
+      <section class="py-16 bg-gradient-to-r from-secondary to-black">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-col lg:flex-row items-center">
+            <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-10">
+              <h2 class="text-3xl font-bold mb-4">
+                TROCA DE ÓLEO ESPECIALIZADA
+              </h2>
+              <p class="text-textGray mb-6">
+                Na Braga Motos, entendemos que a troca de óleo é um dos serviços
+                mais importantes para a saúde do motor da sua moto. Por isso,
+                oferecemos:
+              </p>
+              <ul class="space-y-3 mb-6">
+                <li class="flex items-start">
+                  <i class="fas fa-check text-primaryHover mr-2 mt-1"></i>
+                  <span>Óleos premium das melhores marcas</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-primaryHover mr-2 mt-1"></i>
+                  <span>Filtros originais de alta qualidade</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-primaryHover mr-2 mt-1"></i>
+                  <span>Técnicos especializados em diversas marcas</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-primaryHover mr-2 mt-1"></i>
+                  <span>Serviço rápido e com garantia</span>
+                </li>
+              </ul>
+              <a
+                href="#contact"
+                class="bg-primary hover:bg-primaryHover text-white font-bold py-3 px-6 rounded-full transition duration-300 inline-block"
+                >AGENDE SUA TROCA</a
+              >
+            </div>
+            <div class="lg:w-1/2">
+              <img
+                src="public/loja2-new.jpeg"
+                alt="Troca de óleo"
+                class="w-full rounded-lg shadow-lg object-cover h-15"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-16 bg-secondary">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-col lg:flex-row items-center">
+            <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-10">
+              <img
+                src="public/loja5.jpeg"
+                alt="Loja Braga Motos"
+                class="w-full rounded-lg shadow-lg"
+              />
+            </div>
+            <div class="lg:w-1/2">
+              <h2 class="text-3xl font-bold mb-4">SOBRE A BRAGA MOTOS</h2>
+              <p class="text-textLight mb-4">
+                Há mais de 10 anos no mercado, a Braga Motos se consolidou como
+                referência em peças e acessórios para motos no Guarujá e região.
+              </p>
+              <p class="text-textLight mb-4">
+                Nossa loja física conta com um amplo estoque de peças originais
+                e de qualidade, além de uma equipe técnica especializada para
+                atender todas as necessidades da sua moto.
+              </p>
+              <p class="text-textLight mb-6">
+                Também estamos presentes no Mercado Livre, levando nossos
+                produtos para todo o Brasil com a mesma qualidade e compromisso
+                que nos tornaram conhecidos.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <div class="bg-black bg-opacity-50 p-4 rounded-lg w-60">
+                  <div class="text-primaryHover text-3xl mb-2">
+                    <i class="fas fa-award"></i>
+                  </div>
+                  <h3 class="font-bold">Qualidade</h3>
+                  <p class="text-textGray text-sm">
+                    Produtos testados e aprovados
+                  </p>
+                </div>
+                <div class="bg-black bg-opacity-50 p-4 rounded-lg w-60">
+                  <div class="text-primaryHover text-3xl mb-2">
+                    <i class="fas fa-headset"></i>
+                  </div>
+                  <h3 class="font-bold">Atendimento</h3>
+                  <p class="text-textGray text-sm">
+                    Especializado e personalizado
+                  </p>
+                </div>
+                <div class="bg-black bg-opacity-50 p-4 rounded-lg w-60">
+                  <div class="text-primaryHover text-3xl mb-2">
+                    <i class="fas fa-shield-alt"></i>
+                  </div>
+                  <h3 class="font-bold">Garantia</h3>
+                  <p class="text-textGray text-sm">
+                    Em todos os produtos e serviços
+                  </p>
+                </div>
+                <div class="bg-black bg-opacity-50 p-4 rounded-lg w-60">
+                  <div class="text-primaryHover text-3xl mb-2">
+                    <i class="fas fa-truck-fast"></i>
+                  </div>
+                  <h3 class="font-bold">Entrega Rápida</h3>
+                  <p class="text-textGray text-sm">
+                    Envio ágil para todo Brasil
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-16 bg-black">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold text-center mb-4">FALE CONOSCO</h2>
+          <p class="text-center text-textGray max-w-2xl mx-auto mb-12">
+            Estamos à disposição para tirar suas dúvidas e oferecer o melhor
+            atendimento
+          </p>
+
+          <div class="flex flex-col lg:flex-row gap-8">
+            <div class="lg:w-1/2">
+              <div
+                class="bg-secondary border border-borderColor p-6 rounded-lg"
+              >
+                <h3 class="text-xl font-bold mb-4">INFORMAÇÕES DE CONTATO</h3>
+
+                <div class="mb-6">
+                  <div class="flex items-start mb-4">
+                    <i
+                      class="fas fa-map-marker-alt text-primaryHover mr-3 mt-1"
+                    ></i>
+                    <div>
+                      <h4 class="font-bold">Endereço</h4>
+                      <p class="text-textGray">
+                        Av Raphael Vitiello, 445 - Vila Edna, Guarujá, Brazil
+                        11436-000
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start mb-4">
+                    <i class="fas fa-phone-alt text-primaryHover mr-3 mt-1"></i>
+                    <div>
+                      <h4 class="font-bold">Telefone</h4>
+                      <p class="text-textGray">(13) 99207-2004</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start mb-4">
+                    <i class="fas fa-envelope text-primaryHover mr-3 mt-1"></i>
+                    <div>
+                      <h4 class="font-bold">E-mail</h4>
+                      <p class="text-textGray">bragamotosgja@gmail.com</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start">
+                    <i class="fab fa-instagram text-primaryHover mr-3 mt-1"></i>
+                    <div>
+                      <h4 class="font-bold">Instagram</h4>
+                      <p class="text-textGray">@bragamotos.gja</p>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 class="text-xl font-bold mb-4">HORÁRIO DE FUNCIONAMENTO</h3>
+                <div
+                  class="flex justify-between border-b border-borderColor py-2"
+                >
+                  <span>Segunda a Sexta</span>
+                  <span class="text-primaryHover">08:00 - 18:00</span>
+                </div>
+                <div
+                  class="flex justify-between border-b border-borderColor py-2"
+                >
+                  <span>Sábado</span>
+                  <span class="text-primaryHover">08:00 - 14:00</span>
+                </div>
+                <div class="flex justify-between py-2">
+                  <span>Domingo</span>
+                  <span class="text-primaryHover">Fechado</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:w-1/2">
+              <div
+                class="bg-secondary border border-borderColor p-6 rounded-lg"
+              >
+                <h3 class="text-xl font-bold mb-4">ENVIE UMA MENSAGEM</h3>
+                <form>
+                  <div class="mb-4">
+                    <label for="name" class="block mb-2">Nome</label>
+                    <input
+                      type="text"
+                      id="name"
+                      class="w-full bg-black bg-opacity-50 border border-borderColor rounded-lg py-2 px-4 focus:outline-none focus:border-primaryHover"
+                    />
+                  </div>
+                  <div class="mb-4">
+                    <label for="email" class="block mb-2">E-mail</label>
+                    <input
+                      type="email"
+                      id="email"
+                      class="w-full bg-black bg-opacity-50 border border-borderColor rounded-lg py-2 px-4 focus:outline-none focus:border-primaryHover"
+                    />
+                  </div>
+                  <div class="mb-4">
+                    <label for="phone" class="block mb-2">Telefone</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      class="w-full bg-black bg-opacity-50 border border-borderColor rounded-lg py-2 px-4 focus:outline-none focus:border-primaryHover"
+                    />
+                  </div>
+                  <div class="mb-4">
+                    <label for="message" class="block mb-2">Mensagem</label>
+                    <textarea
+                      id="message"
+                      rows="4"
+                      class="w-full bg-black bg-opacity-50 border border-borderColor rounded-lg py-2 px-4 focus:outline-none focus:border-primaryHover"
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    class="bg-primary hover:bg-primaryHover text-white font-bold py-3 px-6 rounded-full transition duration-300 w-full"
+                  >
+                    ENVIAR MENSAGEM
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Map Section -->
+      <section class="h-96">
+        <iframe
+          src="https://www.google.com/maps?q=Av+Raphael+Vitiello,+445+-+Vila+Edna,+Guarujá,+Brazil+11436-000&output=embed"
+          width="100%"
+          height="100%"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-secondary py-8 border-t border-borderColor">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+              <div class="flex items-center">
+                <div class="text-white font-bold text-2xl mr-2">
+                  <i class="fas fa-motorcycle"></i>
+                </div>
+                <span
+                  class="text-xl font-bold bg-gradient-to-r from-white to-gray-100 bg-clip-text text-transparent"
+                  >BRAGA MOTOS</span
+                >
+              </div>
+              <p class="text-textGray text-sm mt-2">
+                Peças e acessórios para sua moto com qualidade e garantia
+              </p>
+            </div>
+
+            <div class="flex space-x-4 mb-4 md:mb-0">
+              <a
+                href="https://www.instagram.com/bragamotos.gja"
+                target="_blank"
+                class="text-whiteSoft hover:text-primaryHover text-2xl"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                class="text-whiteSoft hover:text-primaryHover text-2xl"
+              >
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a
+                href="https://api.whatsapp.com/send?phone=5513992072004"
+                target="_blank"
+                class="text-whiteSoft hover:text-primaryHover text-2xl"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+
+            <div class="text-center md:text-right">
+              <p class="text-textGray text-sm">
+                © 2025 Braga Motos. Todos os direitos reservados.
+              </p>
+              <p class="text-textGray text-sm">CNPJ: 53.131.721/0001-05</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- WhatsApp Float Button -->
+      <a
+        href="https://api.whatsapp.com/send?phone=5513992072004"
+        target="_blank"
+        class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg transition"
+      >
+        <i class="fab fa-whatsapp"></i>
+      </a>
+
+      <script src="src/main.js"></script>
+    </main>
+  </body>
+</html>

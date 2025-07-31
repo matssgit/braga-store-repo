@@ -1,0 +1,39 @@
+.hero {
+  background-image: linear-gradient(rgba(18, 18, 18, 0.233), #1e1e1e),
+    url("https://images.unsplash.com/photo-1558981806-ec527fa84c39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+  background-size: cover;
+  background-position: center;
+}
+
+.navbarColor {
+  background-color: #1e1e1e;
+}
+
+#title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  text-transform: italic;
+  color: #374151;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.service-icon {
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+  color: #f2b632;
+}
+
+img {
+  background-size: 2rem;
+}
